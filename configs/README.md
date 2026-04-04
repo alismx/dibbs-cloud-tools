@@ -145,3 +145,4 @@ The new structure:
 - No portainer - removed from all configurations
 
 To migrate, keep old directories but use `configs/` going forward.
+
