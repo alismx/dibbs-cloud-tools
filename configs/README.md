@@ -10,19 +10,30 @@ This directory contains configuration templates for deploying the DIBBS applicat
 configs/
 ├── base/                       # Common services - single source of truth
 │   ├── compose.yaml           # All 6 core services + docs (optional)
-│   └── env/
-│       ├── dibbs-ecr-viewer.env
-│       └── dibbs-orchestration.env
+│   ├── env/
+│   │   ├── dibbs-ecr-viewer.env
+│   │   └── dibbs-orchestration.env
+│   └── CLAUDE.md              # See directory structure
 ├── overlays/                   # Environment-specific configurations
 │   ├── AWS_INTEGRATED/        # See CLAUDE.md for structure
 │   ├── AZURE_PG_DUAL/         # See CLAUDE.md for structure
-│   └── ... (13 more environments)
+│   ├── GCP_PG_DUAL/           # See CLAUDE.md for structure
+│   ├── AWS_PG_NON_INTEGRATED/ # See CLAUDE.md for structure
+│   ├── AZURE_PG_NON_INTEGRATED/ # See CLAUDE.md for structure
+│   ├── GCP_PG_NON_INTEGRATED/ # See CLAUDE.md for structure
+│   ├── AWS_SQLSERVER_DUAL/    # See CLAUDE.md for structure
+│   ├── AZURE_SQLSERVER_DUAL/  # See CLAUDE.md for structure
+│   ├── GCP_SQLSERVER_DUAL/    # See CLAUDE.md for structure
+│   ├── AWS_SQLSERVER_NON_INTEGRATED/ # See CLAUDE.md for structure
+│   ├── AZURE_SQLSERVER_NON_INTEGRATED/ # See CLAUDE.md for structure
+│   └── GCP_SQLSERVER_NON_INTEGRATED/ # See CLAUDE.md for structure
 ├── templates/                  # Template files for new environments
 │   ├── ecr-viewer-template.env
 │   └── CLAUDE.md
 └── scripts/
     ├── generate-env.py        # Generate environment configs
-    └── generate-overlays.py   # Generate overlay compose.yaml files
+    ├── generate-overlays.py   # Generate overlay compose.yaml files
+    └── CLAUDE.md              # See script documentation
 ```
 
 ## Understanding the Pattern
