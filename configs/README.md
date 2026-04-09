@@ -11,22 +11,17 @@ configs/
 ├── base/                       # Common services - single source of truth
 │   ├── compose.yaml           # All 6 core services + docs (optional)
 │   └── env/
+│       ├── dibbs-ecr-viewer.env
 │       └── dibbs-orchestration.env
 ├── overlays/                   # Environment-specific configurations
 │   ├── AWS_INTEGRATED/
-│   │   ├── compose.yaml       # Empty overlay - base only
-│   │   └── env/
-│   │       └── dibbs-ecr-viewer.env  # AWS credentials
 │   ├── AZURE_PG_DUAL/
-│   │   └── ...
 │   └── ... (13 more environments)
 ├── templates/                  # Template files for new environments
 │   └── ecr-viewer-template.env
 └── scripts/
     ├── generate-env.py        # Generate environment configs
     └── generate-overlays.py   # Generate overlay compose.yaml files
-
-docs/                           # Local docs build context (referenced by base compose.yaml)
 ```
 
 ## Understanding the Pattern
@@ -145,3 +140,4 @@ The new structure:
 - No portainer - removed from all configurations
 
 To migrate, keep old directories but use `configs/` going forward.
+
